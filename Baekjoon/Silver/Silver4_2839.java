@@ -29,10 +29,10 @@ public class Silver4_2839 {
             else if(N!=0)   {
                 cnt =-1;
                 System.out.println(cnt);
-                for(int bag: bags){
-                    if(originN % bag==0)
-
-                }
+//                for(int bag: bags){
+//                    if(originN % bag==0)
+//
+//                }
             }
 
            // System.out.println(cnt);

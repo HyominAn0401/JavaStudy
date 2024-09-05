@@ -20,9 +20,15 @@ public class Silver2_2512 {
                 budget[i] = Integer.parseInt(st.nextToken());
             }
 
-            int nationalBudget = Integer.parseInt(br.readLine());
+            int nationalbudget = Integer.parseInt(br.readLine());
 
             Arrays.sort(budget);
+
+//            for(int money : budget){
+//                System.out.print(money+" ");
+//            }
+//            System.out.println();
+
             int sum = 0;
             for(int i=0; i<N; i++){
                 sum += budget[i];
@@ -34,21 +40,18 @@ public class Silver2_2512 {
                 maximumPrice[j] = i;
                 j++;
             }
-
-            System.out.println(sum<= nationalBudget? budget[N-1]: binarySearch(maximumPrice, nationalBudget));
-
+            System.out.println(sum<= nationalbudget? budget[N-1]: binarySearch(maximumPrice, nationalbudget));
         }
-
-
     }
 
     public static int binarySearch(int [] array, int nationalBudget){
         int start = 0;
         int end = array.length-1;
-        int sum = 0;
+
         int answer = 0;
 
-        while(start < end){
+        while(start <= end){
+            int sum = 0;
             int mid = (start+end)/2;
             answer = array[mid];
 
@@ -63,8 +66,13 @@ public class Silver2_2512 {
 
             if(sum > nationalBudget) {
                 end = mid - 1;
+                //System.out.println("end "+end);
             }
-            else start = mid+1;
+            else {
+                answer = array[mid];
+                start = mid+1;
+                System.out.println("start "+start);
+            }
         }
 
         return answer;

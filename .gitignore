@@ -1,0 +1,5 @@
+# IntelliJ IDEA 프로젝트 파일 무시
+.idea/
+
+# 빌드 출력 디렉토리 무시
+/out/

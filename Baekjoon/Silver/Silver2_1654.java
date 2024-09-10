@@ -59,7 +59,7 @@ public class Silver2_1654 {
             // 랜선 길이에서 mid 나눈 몫 누적
             for(long length : lanLength){
                 // mid가 0이 아닐 경우에 누적
-                if(mid!=0)
+                //if(mid!=0)
                     cnt += (length/mid);
             }
             //System.out.println("cnt: "+cnt);

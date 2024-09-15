@@ -87,6 +87,7 @@ public class Silver2_1260 {
         }
     }
 
+    // BFS 메서드
 //    public static void bfs(int n){
 //        Queue<Integer> queue = new LinkedList<>();
 //        queue.add(n);

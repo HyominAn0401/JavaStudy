@@ -52,6 +52,8 @@ public class Silver2_24444 {
             // 인접 리스트 오름차순 정렬
             for(int i=1; i<=N; i++){
                 Collections.sort(graph[i]);
+                // 내림차순 - 24445
+                //Collections.sort(graph[i], Comparator.reverseOrder());
             }
 
             // 시작점 R에서 BFS 실행

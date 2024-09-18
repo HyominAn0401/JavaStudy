@@ -99,18 +99,18 @@ public class D4_1226 {
     }
 
     // DFS 메서드
-//    public static void DFS(int x, int y){
-//        if(visited[x][y])   return;
-//        visited[x][y] = true;
-//
-//        for(int i=0; i<4; i++){
-//            int nx = x + dx[i];
-//            int ny = y + dy[i];
-//
-//            if(nx<16 && ny<16 && nx>=0 && ny>=0 && !visited[nx][ny] && (maze[nx][ny]==0 || maze[nx][ny]==3)){
-//                maze[nx][ny] = maze[x][y];
-//                DFS(nx, ny);
-//            }
-//        }
-//    }
+    public static void DFS(int x, int y){
+        if(visited[x][y])   return;
+        visited[x][y] = true;
+
+        for(int i=0; i<4; i++){
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+
+            if(nx<16 && ny<16 && nx>=0 && ny>=0 && !visited[nx][ny] && (maze[nx][ny]==0 || maze[nx][ny]==3)){
+                maze[nx][ny] = maze[x][y];
+                DFS(nx, ny);
+            }
+        }
+    }
 }

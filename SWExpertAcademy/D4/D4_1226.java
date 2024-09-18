@@ -26,8 +26,6 @@ public class D4_1226 {
                 // 미로 배열, 방문 배열 초기화
                 maze = new int[16][16];
                 visited = new boolean[16][16];
-//            int [] start={};
-//            int [] end={};
                 // 출발점과 도착점 x, y값 저장할 변수
                 int start_x = 0, start_y = 0, end_x = 0, end_y = 0;
 
@@ -38,45 +36,33 @@ public class D4_1226 {
                         maze[i][j] = Integer.parseInt(str.split("")[j]);
                         // 값이 2면 출발점 : i, j값 저장
                         if (maze[i][j] == 2) {
-//                        start[0] = i;
-//                        start[1] = j;
                             start_x = i;
                             start_y = j;
                         }
                         // 값이 3이면 도착점 : i, j값 저장
                         if (maze[i][j] == 3) {
-//                        end[0] = i;
-//                        end[1] = j;
                             end_x = i;
                             end_y = j;
                         }
                     }
                 }
 
-                //BFS(start[0], start[1]);
                 // 시작점에서 BFS 실행
                 BFS(start_x, start_y);
+                // DFS 메서드도 가능
+                //DFS(start_x, start_y);
 
-                //if(maze[end[0]][end[1]]!=2){
                 // 도착점 값이 2가 아니면 도달 불가능, 0 저장
                 if (maze[end_x][end_y] != 2) {
                     //System.out.println(0);
                     sb.append("#"+testCase+" "+0+"\n");
                 } else {
                     // 도착점 값이 2면 도달 가능, 1 저장
-                    //System.out.println(1);
                     sb.append("#"+testCase+" "+1+"\n");
                 }
             }
             // 결과 출력
             System.out.print(sb);
-
-//            for(int i=0; i<16; i++){
-//                for(int j=0; j<16; j++){
-//                    System.out.print(maze[i][j]+" ");
-//                }
-//                System.out.println();
-//            }
         }
     }
 
@@ -111,4 +97,20 @@ public class D4_1226 {
             }
         }
     }
+
+    // DFS 메서드
+//    public static void DFS(int x, int y){
+//        if(visited[x][y])   return;
+//        visited[x][y] = true;
+//
+//        for(int i=0; i<4; i++){
+//            int nx = x + dx[i];
+//            int ny = y + dy[i];
+//
+//            if(nx<16 && ny<16 && nx>=0 && ny>=0 && !visited[nx][ny] && (maze[nx][ny]==0 || maze[nx][ny]==3)){
+//                maze[nx][ny] = maze[x][y];
+//                DFS(nx, ny);
+//            }
+//        }
+//    }
 }

@@ -1,54 +1,54 @@
 package Silver;
 
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Silver4_9372 {
-    static ArrayList<Integer> [] graph;
-    static boolean [] visited;
+    static ArrayList<Integer> [] airplane;
     static int N, M;
-
+    static boolean [] visited;
     public static void main(String[] args) throws Exception{
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            N = Integer.parseInt(st.nextToken());
-            M = Integer.parseInt(st.nextToken());
+            int testCase = Integer.parseInt(br.readLine());
+            StringBuilder sb = new StringBuilder();
 
-            graph = new ArrayList[N+1];
-            visited = new boolean[N+1];
+            for(int t=0; t<testCase; t++){
+                StringTokenizer st = new StringTokenizer(br.readLine());
+                N = Integer.parseInt(st.nextToken());
+                M = Integer.parseInt(st.nextToken());
 
-            for(int i=1; i<=N; i++){
-                graph[i] = new ArrayList<>();
+                airplane = new ArrayList[N+1];
+
+                for(int i=1; i<=N; i++){
+                    airplane[i] = new ArrayList<>();
+                }
+
+                for(int i=0; i<M; i++){
+                    st = new StringTokenizer(br.readLine());
+                    int s = Integer.parseInt(st.nextToken());
+                    int e = Integer.parseInt(st.nextToken());
+                    airplane[s].add(e);
+                    airplane[e].add(s);
+                }
+
+                visited = new boolean[N+1];
+                sb.append((N-1)+"\n");
             }
-
-            for(int i=0; i<M; i++){
-                st = new StringTokenizer(br.readLine());
-                int s = Integer.parseInt(st.nextToken());
-                int e = Integer.parseInt(st.nextToken());
-                graph[s].add(e);
-                graph[e].add(s);
-            }
-
-            int minValue = Integer.MAX_VALUE;
-            for(int i=1; i<=N; i++){
-                minValue = Math.min(DFS(i), minValue);
-            }
-            System.out.println(minValue);
+            System.out.print(sb);
         }
     }
 
-    public static int DFS(int v){
-        if(visited[v])  return 0;
-        visited[v] = true;
-
-        int cnt = 1;
-        for(int x : graph[v]){
-            if(!visited[x]){
-                cnt += DFS(x);
-            }
-        }
-        return cnt;
-    }
+//    public static int dfs(int n){
+//        int count = 1;
+//        for(int num : airplane[n]){
+//            if(!visited[num]){
+//                visited[num] = true;
+//                count += dfs(num);
+//            }
+//        }
+//        return count;
+//    }
 }

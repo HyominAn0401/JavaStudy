@@ -8,21 +8,32 @@ public class Silver1_11052 {
     public static void main(String[] args) throws Exception{
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
             int N = Integer.parseInt(br.readLine());
-            int [] prices = new int[N+1];
-            int [] dp = new int[N+1];
+            int [] cards = new int[N+1];
 
             StringTokenizer st = new StringTokenizer(br.readLine());
             for(int i=1; i<=N; i++){
-                prices[i] = Integer.parseInt(st.nextToken());
+                cards[i] = Integer.parseInt(st.nextToken());
             }
 
+//            int [] pay = new int[N/2+1];
+//
+//            pay[0] = cards[N];
+//            int maxValue = pay[0];
+//
+//            for(int i=1; i<=N/2; i++){
+//                pay[i] = cards[i] + cards[N-i];
+//                maxValue = Math.max(maxValue, pay[i]);
+//            }
+
+            int [] pay = new int[N+1];
+
             for(int i=1; i<=N; i++){
-                for(int j=1; j<=i; j++){
-                    dp[i] = Math.max((prices[j] + dp[i-j]), dp[i]);
+                for(int k=1; k<=i; k++){
+                    pay[i] = Math.max(pay[i], pay[i-k] + cards[k]);
                 }
             }
 
-            System.out.println(dp[N]);
+            System.out.println(pay[N]);
         }
     }
 }

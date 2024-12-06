@@ -15,16 +15,6 @@ public class Silver1_11052 {
                 cards[i] = Integer.parseInt(st.nextToken());
             }
 
-//            int [] pay = new int[N/2+1];
-//
-//            pay[0] = cards[N];
-//            int maxValue = pay[0];
-//
-//            for(int i=1; i<=N/2; i++){
-//                pay[i] = cards[i] + cards[N-i];
-//                maxValue = Math.max(maxValue, pay[i]);
-//            }
-
             int [] pay = new int[N+1];
 
             for(int i=1; i<=N; i++){

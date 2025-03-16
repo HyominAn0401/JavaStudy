@@ -1,4 +1,4 @@
-package level1;
+package AlgorithmPracticeKit.level1;
 
 import java.util.*;
 

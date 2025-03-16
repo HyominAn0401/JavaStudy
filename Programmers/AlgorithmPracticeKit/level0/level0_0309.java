@@ -1,4 +1,4 @@
-package level0;
+package AlgorithmPracticeKit.level0;
 
 public class level0_0309 {
     public static void main(String[] args) throws Exception{

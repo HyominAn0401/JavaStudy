@@ -1,4 +1,4 @@
-package level0;
+package AlgorithmPracticeKit.level0;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -3,6 +3,8 @@ package Kakao.BlindRecruitment2019;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class KakaoBlindRecruitment2019_42888 {
 
@@ -30,6 +32,7 @@ public class KakaoBlindRecruitment2019_42888 {
 
     public static String[] solution(String[] record){
         ArrayList<User> userArrayList = new ArrayList<>();
+        Map<String, String> nicknameMap = new HashMap<>();
         String [] str = new String[record.length];
 
         for(int i=0; i<record.length; i++){
@@ -42,6 +45,7 @@ public class KakaoBlindRecruitment2019_42888 {
             switch (behavior) {
                 case "Enter":
                     String nickname = order[2];
+                    nicknameMap.put(uid, nickname);
                     userArrayList.add(new User(uid, nickname, true));
                     break;
                 case "Leave":
@@ -56,6 +60,7 @@ public class KakaoBlindRecruitment2019_42888 {
                     break;
                 case "Change":
                     String changedName = order[2];
+                    nicknameMap.put(uid, changedName);
                     // 찾기
                     for(User user : userArrayList){
                         if(user.uid.equals(uid) && user.isIn){
@@ -75,11 +80,11 @@ public class KakaoBlindRecruitment2019_42888 {
 
             switch(str[i]){
                 case "Enter":
-                    sb.append(getLatestNickname(userArrayList, uid) + "님이 들어왔습니다.");
+                    sb.append(nicknameMap.get(uid) + "님이 들어왔습니다.");
                     answer.add(sb.toString());
                     break;
                 case "Leave":
-                    sb.append(getLatestNickname(userArrayList, uid) + "님이 나갔습니다.");
+                    sb.append(nicknameMap.get(uid) + "님이 나갔습니다.");
                     answer.add(sb.toString());
                     break;
                 default:
@@ -90,12 +95,4 @@ public class KakaoBlindRecruitment2019_42888 {
         return answer.toArray(new String[0]);
     }
 
-    private static String getLatestNickname(ArrayList<User> userList, String uid) {
-        for (int i = userList.size() - 1; i >= 0; i--) {
-            if (userList.get(i).uid.equals(uid)) {
-                return userList.get(i).nickname;
-            }
-        }
-        return "";
-    }
 }

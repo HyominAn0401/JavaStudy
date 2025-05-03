@@ -73,6 +73,7 @@ public class KakaoTechInternship2022_118666 {
     }
 
     // 타입별 점수 누적
+    // 없으면 0
     public static void checkType(char ch, int num){
         switch(ch){
             case 'A':

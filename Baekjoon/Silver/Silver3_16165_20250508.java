@@ -35,7 +35,7 @@ public class Silver3_16165_20250508 {
                 int num = Integer.parseInt(br.readLine());
                 // 0 : str은 그룹명, 멤버들 이름 출력하기
                 if(num==0){
-                    for(String memb   ers : girlGroups.get(str))
+                    for(String members : girlGroups.get(str))
                         sb.append(members+"\n");
                 }
                 // 1: str은 이름, 그룹명 출력하기

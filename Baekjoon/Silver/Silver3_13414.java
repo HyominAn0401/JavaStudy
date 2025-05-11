@@ -25,21 +25,21 @@ public class Silver3_13414 {
                 System.out.println(studentNumber);
             }
 
-//            Map<String, Integer> students = new HashMap<>();
-//
-//            int num = 0;
-//            for(int i=-0; i<L; i++){
-//                String studentNumber = br.readLine();
-//                students.put(studentNumber, num);
-//                num++;
-//            }
-//
-//            List<Map.Entry<String, Integer>> list = new ArrayList<>(students.entrySet());
-//            Collections.sort(list, Map.Entry.comparingByValue());
-//
-//            for(int i=0; i<K && i<list.size(); i++){
-//                System.out.println(list.get(i).getKey());
-//            }
+            Map<String, Integer> students = new HashMap<>();
+
+            int num = 0;
+            for(int i=-0; i<L; i++){
+                String studentNumber = br.readLine();
+                students.put(studentNumber, num);
+                num++;
+            }
+
+            List<Map.Entry<String, Integer>> list = new ArrayList<>(students.entrySet());
+            Collections.sort(list, Map.Entry.comparingByValue());
+
+            for(int i=0; i<K && i<list.size(); i++){
+                System.out.println(list.get(i).getKey());
+            }
         }
     }
 }

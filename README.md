@@ -33,3 +33,4 @@
 
 ## 환경 설정
 - Java 17
+- Intellij

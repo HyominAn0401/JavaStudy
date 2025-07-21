@@ -47,6 +47,7 @@ public class Gold5_1931 {
         }
     }
 
+    // 미팅 클래스
     static class Meeting{
         int start;
         int end;

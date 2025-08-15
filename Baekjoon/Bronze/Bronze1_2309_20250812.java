@@ -28,6 +28,7 @@ public class Bronze1_2309_20250812 {
                 }
             }
 
+            // 가짜 키는 전체 합에서 제외
             for(int height : heights){
                 if(height!=fake1 && height!=fake2)
                     System.out.println(height);

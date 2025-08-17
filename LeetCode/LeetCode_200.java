@@ -34,6 +34,8 @@ public class LeetCode_200 {
         return count;
     }
 
+
+    // dfs
     public static void dfs(int x, int y, char[][] grid){
         visited[x][y] = true;
 

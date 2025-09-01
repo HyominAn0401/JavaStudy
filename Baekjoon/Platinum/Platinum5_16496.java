@@ -17,6 +17,7 @@ public class Platinum5_16496 {
                 numbers[i] = st.nextToken();
             }
 
+            // compare 
             Arrays.sort(numbers, (a,b)-> (b+a).compareTo(a+b));
 
             if(numbers[0].equals("0"))

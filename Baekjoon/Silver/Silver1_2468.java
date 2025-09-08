@@ -48,6 +48,7 @@ public class Silver1_2468 {
 
     }
 
+    // dfs
     public static void dfs(int x, int y, int height){
         if(visited[x][y]) return;
         visited[x][y] = true;

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+// KakaoBlindRecruitment17680
 public class KakaoBlindRecruitment2018_17680 {
     public static void main(String[] args) throws Exception{
         int cacheSize = 2;

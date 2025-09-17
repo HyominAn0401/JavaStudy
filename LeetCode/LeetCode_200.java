@@ -24,6 +24,7 @@ public class LeetCode_200 {
 
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
+                // 방문하지 않은 경우
                 if(!visited[i][j] && grid[i][j]=='1'){
                     dfs(i, j, grid);
                     count++;

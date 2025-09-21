@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 
 public class Silver3_2559_20250920 {
     public static void main(String[] args) throws Exception{
+        // 구현 및 해야할 것 :
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
             StringTokenizer st = new StringTokenizer(br.readLine());
             int N = Integer.parseInt(st.nextToken());

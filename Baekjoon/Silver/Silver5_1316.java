@@ -61,6 +61,35 @@ public class Silver5_1316 {
                 if(!isDifferent)    count++;
             }
             System.out.println(count);
+
+//            int N = Integer.parseInt(br.readLine());
+//            int count = 0;
+//            for(int n =0; n<N; n++){
+//                String s = br.readLine();
+//                if(isGroupWord(s))  count++;
+//            }
+//            System.out.println(count);
         }
+    }
+
+    private static boolean isGroupWord(String s){
+        boolean [] seen = new boolean[26]; // a ~ z
+        char prev = 0;
+
+        for(int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+
+            if(c!=prev) { //블록이 끊김
+                int idx = c - 'a';
+                if(seen[idx]){
+                    // 이전에 한 번 나온 적 있는 문자 다시 등장
+                    return false;
+                }
+                seen[idx] = true; // 이 문자는 본 것임
+                prev = c;
+            }
+
+        }
+        return true;
     }
 }

@@ -93,10 +93,12 @@ public class Silver4_1244 {
         sw[i] ^= 1;
     }
 
+    // 남학생
     private static void applyBoy(int[] sw, int n, int k){
         for(int m=k; m<=n; m+=k)    toggle(sw, m);
     }
 
+    // 여학생
     private static void applyGirl(int[] sw, int n, int k){
         // 중심
         toggle(sw, k);
@@ -112,6 +114,7 @@ public class Silver4_1244 {
         }
     }
 
+    // 출력문
     private static void printSwitches(int[] sw){
         for(int i=1; i<sw.length; i++){
             System.out.print(sw[i]+" ");
